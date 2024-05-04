@@ -76,9 +76,9 @@ test.describe('Feature: End 2 End Test', () => {
     })
     await test.step('And I verify that the new category shows up on the list', async () => {
         listOfCategories = await requestApi.getListOfCategories();
-        let parentId = listOfCategories.find(cat => cat.name === testCategoryName );
-        let subCategoryResult = await requestApi.getSubCategoryByParentId(parentId);
-        await expect(subCategoryResult).not.toBeEmpty();
+        let category = listOfCategories.find(cat => cat.name === testCategoryName );
+        let subCategoryResult = await requestApi.getSubCategoryByParentId(category.id);
+        await expect(subCategoryResult).toBeTruthy();
     })
   });
 });

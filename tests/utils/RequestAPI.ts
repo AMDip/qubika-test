@@ -42,7 +42,7 @@ export class RequestAPI {
     const response = await this.request.get(`${BASE_URL}/api/category-type`, {
         headers: {
             Accept: 'application/vnd.github.v3+json',
-            Authorization: `token ${token}`,
+            Authorization: `Bearer ${token}`,
       
         },
     });
@@ -56,7 +56,7 @@ export class RequestAPI {
     let token = await this.loginWithEmailAndPass(Env.ADMIN_EMAIL, Env.ADMIN_PASSWORD);
     const response = await this.request.get(`${BASE_URL}/api/category-type/list/${parentId}`, {
         headers: {
-            Authorization: `token ${token}`,
+            Authorization: `Bearer ${token}`,
       
         },
     });
