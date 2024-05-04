@@ -31,7 +31,6 @@ export class RequestAPI {
             password: pass
         },
     });
-    console.log(await response.json());
     await expect(response.status(), 'There was an error loggin in the user').toBe(200);
     const responseObject = await response.json();
     return await responseObject.token;
@@ -40,7 +39,6 @@ export class RequestAPI {
   async getListOfCategories(): Promise<any> {
     //create a new user and return the response
     let token = await this.loginWithEmailAndPass(Env.ADMIN_EMAIL, Env.ADMIN_PASSWORD);
-    console.log('TOKEN FROM LOGIN: ' + token);
     const response = await this.request.get(`${BASE_URL}/api/category-type`, {
         headers: {
             Accept: 'application/vnd.github.v3+json',
@@ -48,7 +46,6 @@ export class RequestAPI {
       
         },
     });
-    console.log(await response.json());
     await expect(response.status(), 'There was an error getting the list of categories').toBe(200);
     const responseObject = await response.json();
     return await responseObject;
@@ -63,8 +60,6 @@ export class RequestAPI {
       
         },
     });
-    console.log(await response.body());
-    console.log(await response.json());
     await expect(response.status(), 'There was an error getting the sub category by parentId').toBe(200);
     const responseObject = await response.json();
     return await responseObject;

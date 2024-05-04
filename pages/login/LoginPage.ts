@@ -1,7 +1,7 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from '../base/BasePage';
 import { LoginPageChecker } from './LoginPageChecker';
-import { DashboardPage } from '../dashboard/dashboardPage';
+import { DashboardPage } from '../dashboard/DashboardPage';
 
 export class LoginPage extends BasePage {
   readonly checker: LoginPageChecker;
