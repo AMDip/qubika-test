@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from '../base/BasePage';
-import { DashboardPageChecker } from './dashboardPageChecker';
+import { DashboardPageChecker } from './DashboardPageChecker';
 import { CategoriesPage } from '../categories/CategoriesPage';
 
 export class DashboardPage extends BasePage {

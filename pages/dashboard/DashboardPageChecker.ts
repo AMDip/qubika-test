@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 import { BasePageChecker } from '../base/BasePageChecker';
-import { DashboardPage } from './dashboardPage';
+import { DashboardPage } from './DashboardPage';
 
 export class DashboardPageChecker extends BasePageChecker {
   readonly page: DashboardPage;
